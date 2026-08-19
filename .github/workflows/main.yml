@@ -6,4 +6,7 @@ jobs:
    sample:
       runs-on: ubuntu-latest
       steps:
-         - run: echo "Hello, This is my simple workflow"
+         - name: Greetings 
+           uses: actions/hello-world-javascript-action@v1
+           with: 
+             who-to-greet: "World" 
