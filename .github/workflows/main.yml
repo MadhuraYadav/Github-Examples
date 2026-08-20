@@ -1,18 +1,35 @@
 name: Sample Workflow
 
 on: 
-   schedule:
-      - cron: "*/5 * * * *"
+   #schedule:
+    #  - cron: "*/5 * * * *"
    workflow_dispatch:
-   push:
-      branches:
-         - main
+      inputs:
+         Name: 
+            description: Name of user to greet
+            required: true
+            type: string
+            default: "Madhura"
+         Gender:
+            description: gender of the baby
+            required: true
+            type: string
+   
+   #push:
+    #  branches:
+    #     - main
 
 jobs:
    sample:
       runs-on: ubuntu-latest
       steps:
-         - name: Greetings 
-           uses: actions/hello-world-javascript-action@v1
-           with: 
-             who-to-greet: "World" 
+         - name: Gender Reveal
+           run: 
+              echo "Hello ${{inputs.Name}}, it's a ${{inputs.Gender}}
+         
+         #- name: Greetings 
+        #   uses: actions/hello-world-javascript-action@v1
+        #   with: 
+        #     who-to-greet: "World" 
+
+        
