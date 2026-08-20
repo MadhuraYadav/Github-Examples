@@ -25,7 +25,7 @@ jobs:
       steps:
          - name: Gender Reveal
            run: 
-              echo "Hello ${{inputs.Name}}, it's a ${{inputs.Gender}}
+              echo "Hello ${{inputs.Name}}, it's a ${{inputs.Gender}}"
          
          #- name: Greetings 
         #   uses: actions/hello-world-javascript-action@v1
