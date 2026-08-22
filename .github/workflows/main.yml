@@ -27,7 +27,7 @@ on:
 
 jobs:
    Conditional_testing:
-      if: ${{ github.event == 'push'}}
+      if: ${{ github.event_name == 'push'}}
    #sample:
       runs-on: ubuntu-latest
       steps:
