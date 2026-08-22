@@ -1,9 +1,10 @@
-name: Sample Workflow
+#name: Sample Workflow
+name: Conditional Workflow
 
-on: 
-   repository_dispatch:
-      types:
-         - my-custom-event
+on: push
+   #repository_dispatch:
+   #   types:
+   #      - my-custom-event
          
    #schedule:
     #  - cron: "*/5 * * * *"
@@ -24,7 +25,9 @@ on:
     #     - main
 
 jobs:
-   sample:
+   Conditional_testing:
+      if: github.event == 'push'
+   #sample:
       runs-on: ubuntu-latest
       steps:
          - name: Webhook event #Gender Reveal
