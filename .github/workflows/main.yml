@@ -1,7 +1,8 @@
 #name: Sample Workflow
 name: Conditional Workflow
 
-on: push
+on: 
+   push:
    #repository_dispatch:
    #   types:
    #      - my-custom-event
