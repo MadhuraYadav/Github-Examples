@@ -1,0 +1,15 @@
+name: Workflow Commands
+
+on: push
+
+jobs:
+  commands:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Test the GitHub env command
+         run: |
+           echo "animal=duck" >> $GITHUB_ENV
+       - name: Test the GitHub env command for printing
+         run: |
+           echo $animal
+                
