@@ -1,0 +1,16 @@
+name: Workflow for MACOS and Windows runner
+on: push
+
+jobs:
+  Windows_runner_testing:
+    runs-on: windows-latest
+    steps:
+      - name: Testing for runner-W
+        run: |
+          "Hello, World!" | Out-File -FilePath hello.txt -Encoding UTF8; Get-Content hello.txt
+  MacOS_runner_testing:
+     runs-on: macos-latest
+     steps:
+       - name: Testing for runner-M
+         run: echo "Hello, World!" > hello.txt && cat hello.txt
+    
