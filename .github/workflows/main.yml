@@ -33,7 +33,7 @@ jobs:
        - name: Simple task 1
          run: echo "Hello Maddy"
        - name: Test for success
-         if: failure()
+         if: success()
          run: echo "Above task is a success"
        - name: Simple task 2
          run: |
