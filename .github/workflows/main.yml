@@ -1,5 +1,6 @@
 #name: Sample Workflow
-name: Conditional Workflow
+#name: Conditional Workflow
+name: Expressions
 
 on: 
    push:
@@ -26,14 +27,30 @@ on:
     #     - main
 
 jobs:
-   Conditional_testing:
-      if: github.event_name == 'push'
+   Expression_testing:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Simple task 1
+         run: echo "Hello Maddy"
+       - name: Test for success
+         if: failure()
+         run: echo "Above task is a success"
+       - name: Simple task 2
+         run: |
+           echo "Hello Faly...."
+           exit 1
+       - name: Test for success
+         if: failure()
+         run: echo "Above task has failed"
+        
+   #Conditional_testing:
+   #   if: github.event_name == 'push'
    #sample:
-      runs-on: ubuntu-latest
-      steps:
-         - name: Webhook event #Gender Reveal
-           run: 
-             echo "Hello, this is a webhook-triggered event"
+   #   runs-on: ubuntu-latest
+   #   steps:
+   #      - name: Webhook event #Gender Reveal
+   #        run: 
+    #         echo "Hello, this is a webhook-triggered event"
               #echo "Hello ${{inputs.Name}}, it's a ${{inputs.Gender}}"
          
          #- name: Greetings 
