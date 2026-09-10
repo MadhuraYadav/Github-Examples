@@ -1,0 +1,11 @@
+name: Context Testing
+
+on: push
+
+jobs:
+  github-context: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Look for actor
+        run: |
+          echo "Actor here is ${{ github.actor }}"
