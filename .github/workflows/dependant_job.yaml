@@ -9,11 +9,11 @@ jobs:
       - name: First Job
         run: echo " The first job"
        
-   Testing-Dependant-job2:
+  Testing-Dependant-job2:
     runs-on: ubuntu-latest
+    needs: Testing-Dependant-job1
     steps:
       - name: Second Job
-        need: Testing-Dependant-job1
         run: echo " I will run if first job is success"
   
 
