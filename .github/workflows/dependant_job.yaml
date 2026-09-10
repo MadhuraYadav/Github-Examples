@@ -1,0 +1,26 @@
+name: Dependent Jobs
+
+on: push
+
+jobs:
+  Testing-Dependant-job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: First Job
+        run: echo " The first job"
+       
+   Testing-Dependant-job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Second Job
+        need: Testing-Dependant-job1
+        run: echo " I will run if first job is success"
+  
+
+     # - name: Third Job
+     #   run: echo " I will run if first job will fail"
+        
+        
+
+
+
