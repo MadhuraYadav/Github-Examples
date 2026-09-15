@@ -1,0 +1,11 @@
+name: Inline workflow scripts
+
+on: push
+
+jobs:
+  script_writing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Executing the inline script
+        run: |
+          echo "Hello"
