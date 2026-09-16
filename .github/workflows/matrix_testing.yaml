@@ -1,0 +1,16 @@
+name: Matrix Example
+
+on: push
+
+jobs:
+  testing_matrix:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu latest]
+        version: [10,12]
+    
+    steps:
+      - name: print the statement
+        run: |
+          echo "This is a matrix is running on ${{ matrix.version}} "
