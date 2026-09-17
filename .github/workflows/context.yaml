@@ -5,6 +5,8 @@ on: push
 jobs:
   github-context: 
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_STEP_DEBUG: true
     steps:
       - name: Look for actor
         run: |
