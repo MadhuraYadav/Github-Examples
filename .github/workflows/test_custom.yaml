@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Test the custom action
-        uses: ./custom_hello/greet/action.yaml
+        uses: ./custom_hello/greet
         id: hello-step
         with: 
           greeting_name: "Madhura"
