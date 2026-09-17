@@ -1,0 +1,18 @@
+name: Testing input and output in composite action
+
+on: push
+
+jobs:
+  ip_op_testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testing input output in composite action
+        uses: ./.github/cust_action/ip_op
+        id: greet
+        with: 
+          name: "Vinayak"
+      - name: Check the date for greeting
+        run: |
+          echo "The greeting date is ${{steps.greet.outputs.greeting_date}}"
+        
+  
