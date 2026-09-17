@@ -10,12 +10,14 @@ inputs:
 outputs:
   greeting_date: 
     description: date of the greeting
+    value: ${{ steps.greet_step.outputs.greeting-date}}
    
   
 runs:
    using: composite
    steps:
      - name: meet and greet
+       id: greet_step
        run: |
          echo "greeting-date=$(date)" >> $GITHUB_OUTPUT
          echo "Hello ${{inputs.name}}"
