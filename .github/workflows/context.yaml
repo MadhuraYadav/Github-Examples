@@ -8,4 +8,4 @@ jobs:
     steps:
       - name: Look for actor
         run: |
-          echo "Actor here is ${{ github.actor }}"
+          echo "Actor here is ${{ github.actor }} "
