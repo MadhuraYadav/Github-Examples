@@ -6,6 +6,9 @@ jobs:
   test_the_custome_action:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        
       - name: Test the custom action
         uses: ./custom_hello/greet/action.yaml
         id: hello-step
