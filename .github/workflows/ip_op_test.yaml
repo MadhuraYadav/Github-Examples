@@ -6,6 +6,9 @@ jobs:
   ip_op_testing:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        
       - name: Testing input output in composite action
         uses: ./.github/cust_action/ip_op
         id: greet
