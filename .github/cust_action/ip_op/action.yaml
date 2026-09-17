@@ -1,0 +1,23 @@
+name: Custom action for inputs and outputs
+description: "Custom action for input output"
+
+inputs:
+  name:
+    description: "Used for saying hello"
+    required: true
+    default: "Vina"
+
+outputs:
+  greeting_date: 
+    description: date of the greeting
+   
+  
+runs:
+   using: composite
+   steps:
+     - name: meet and greet
+       run: |
+         echo "greeting-date=$(date)" >> $GITHUB_OUTPUT
+         echo "Hello ${{inputs.name}}"
+       shell: bash
+  
