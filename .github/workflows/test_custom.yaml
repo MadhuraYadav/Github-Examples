@@ -1,0 +1,17 @@
+name: Test the custom action
+
+on: push
+
+jobs:
+  test_the_custome_action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test the custom action
+        uses: ./.custom-hello/greet
+        id: hello-step
+        with: 
+          greeting_name: "Madhura"
+      - name: Get the Action Output
+        run: echo "The action finished at ${{ steps.hello-step.outputs.greeting }}"
+
+        
