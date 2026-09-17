@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test the custom action
-        uses: ./.custom-hello/greet
+        uses: ./custom_hello/greet/action.yaml
         id: hello-step
         with: 
           greeting_name: "Madhura"
